@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<properties resource="db.properties"></properties>
+	<settings>
+		
+		<!-- 自增主键 -->
+		<setting name="useGeneratedKeys" value="true"/>
+		<!-- 列别名替换列名 -->
+		<setting name="useColumnLabel" value="true"/>
+		
+		<!-- 开启驼峰命名转换 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		
+		<!-- 指定mybatis使用日志组件 -->
+		<setting name="logImpl" value="LOG4J2"/>
+		<!-- 开启全局的二级缓存 -->
+		<setting name="cacheEnabled" value="false"/>
+		
+		<!-- 懒加载 -->
+		<setting name="lazyLoadingEnabled" value="true"/>
+		<setting name="logImpl" value="STDOUT_LOGGING" />  
+		<!--true时，对任意延迟属性的调用会使带有延迟加载属性的对象完整加载；
+        false，每种属性将会按需加载。
+        	   默认为：true-->
+		<setting name="aggressiveLazyLoading" value="false"/>
+		
+	</settings>
+	
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageInterceptor">
+			<property name="offsetAsPageNum" value="false"/>
+			<property name="rowBoundsWithCount" value="false"/>
+			<property name="pageSizeZero" value="true"/>
+			<property name="reasonable" value="false"/>
+			<property name="supportMethodsArguments" value="false"/>
+			<property name="returnPageInfo" value="none"/>
+		
+		</plugin>
+	
+	</plugins>
+	
+
+</configuration>
