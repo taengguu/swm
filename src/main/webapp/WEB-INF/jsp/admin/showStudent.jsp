@@ -138,7 +138,7 @@
 	        autoWidth : true,  
 	        rowNum : 10,  
 	        rownumbers : true,  
-	        viewrecords: true,  
+	        viewrecords: true,   
 	        caption : "用户列表"  
 	        });  
 	    $(window).bind('resize', function() {  
